@@ -1,0 +1,21 @@
+2021.01.02
+This is a modified robot chassis control code based on RTS-Firmware-ICRA2020,
+The modifications are as follows:
+  - Modified the mapping of remote control channel S1 (chassis_task.c)
+    a) Modified chassis motor control mapping when S1=1 (up) : 
+      wz (spin) speed factor: 0.0 -> 1.0;
+    b) Modified chassis motor control mapping when S1=3 (mid) : 
+      vx (forward) speed factor: 1.0 -> 0.2;
+      vy (side) speed factor: 1.0 -> 0.2;
+      wz (spin) speed factor: 1.0 -> 0.5;
+  - Modified the mapping of remote control channel S2 (chassis_task.c)
+    a) Modified control mapping when S2: 1 (up) -> 3 (mid) :
+      Update position status for GM6020: 1 (up) -> 3 (mid)
+    b) Modified control mapping when S2: 3 (mid) -> 1 (up) :
+      Update position status for GM6020: 3 (mid) -> 1 (up)
+  - Modified the method: int32_t chassis_angle_broadcast(int16_t yaw, int16_t rev) (chassis_task.c)
+      Instead of sending chassis attitude data to the cradle head, the GM6020 control code is sent.
+
+2021.01.05
+  - Fixed an issue that caused the program to not work properly by pulling out the jumper cap by mistake:
+      Modified init.c to remove the judgment about chassis development board/pan-head development board and force the lock to be chassis development board
