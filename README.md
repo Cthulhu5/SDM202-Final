@@ -1,4 +1,4 @@
-# SDM202-Final
+# Group-5 of SDM202, 2020 Autumn
 
 USART通信/读取无线电遥控器接收机数据：
 https://team-1604922018605.atlassian.net/wiki/spaces/SDIMGROUP5/pages/2719881/-+DT7+DR16
