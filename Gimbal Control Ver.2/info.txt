@@ -1,1 +1,12 @@
-info.txt
+这是上部机构控制程序的版本: 2.0
+这个版本包括以下程序模块：
+  1.无线电信号接收/接收机通信：
+    board/bsp_usart.c
+    applications/remote_control.c
+  2.CAN总线通信：
+    board/bsp_can.c
+    applications/can_receive.c
+  3.外部引脚电平变化触发的中断：
+    applications/IR_callback.c
+  4.CAN总线电机/PWM舵机/继电器控制
+    applications/EMA_control.c
